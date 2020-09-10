@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{mindmap,backgrounds}
+\pagestyle{empty}
+\begin{document}
+\pagestyle{empty}
+
+
+
+\centering
+
+\Huge{Algorithms Mind Map}
+\begin{tikzpicture}
+
+
+
+
+  
+  \path[mindmap,concept color=gray,text=black]
+    node[concept](alg) {Algorithms}
+        
+        
+    child[grow=240, concept color=gray!70] {
+      node[concept](flow) {Flowcharts}
+    }
+    child[grow=270,concept color=gray!70] { node[concept](pseudo) {Pseudocode} }
+    child[grow=300,concept color=gray!70] { node[concept](math) {Mathematics} 
+    }
+    % Networks
+    child[grow=170,concept color=gray!20]{node[concept](net) {Networks}
+    child [grow=160]
+    {node [concept] (union) {Quick-Union}}
+    child [grow=200] 
+    {node [concept] (find) {Quick-Find}}
+    }
+      % Sorting
+      child[grow=130,concept color=gray!30]{node[concept] (sorting){Sorting}
+    child [grow=180]
+    {node [concept] (bubble) {Bubble Sort}}
+    child [grow=135] 
+    {node [concept] (select) {Selection Sort}}
+    child [grow=90] 
+    {node [concept] (merge) {Merge Sort}
+    }child [grow=45] 
+    {node [concept] (quick) {Quick Sort}
+    }}
+  child[grow=80,concept color=gray!40]{node[concept] (search){Search}}
+     % Encrypt
+   child[grow=50,concept color=gray!50]{node[concept] (encrypt){Encryption}
+   child [grow=0]
+    {node [concept] (cae) {Caesar Cipher}}
+    child [grow=45] 
+    {node [concept] (vig) {Vigenere Cipher}}}
+      % Random Number
+ child[grow=10,concept color=gray!60]{node[concept] (random){Random Number}
+   child [grow=315]
+    {node [concept] (mid) {Middle Square Method}}
+    child [grow=0] 
+    {node [concept] (cong) {Linear Congruential Method
+}}}
+
+    ;
+    
+
+   \begin{pgfonlayer}{background}
+    \draw [circle connection bar]
+      (math) edge (pseudo)
+      (pseudo) edge (flow) 
+      (union) edge (find) 
+      (bubble) edge (select)
+      (merge) edge (quick)
+      (sorting) edge (search)
+      (cae) edge (vig)
+      (cong) edge (encrypt)
+      ;
+  \end{pgfonlayer}
+\end{tikzpicture}\end{document}
+
+\end{tikzpicture}
+\end{document}
